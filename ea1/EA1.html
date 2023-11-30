@@ -1,0 +1,114 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Deep-Learning</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/favicon-logo.png" type="image/png" sizes="16x16">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+    <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> -->
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="/ea1/sketch.js"></script>
+</head>
+
+
+
+<body>
+
+    <header>
+        <img class="logo" src="/favicon-logo.png" alt="logo">
+        <nav>
+            <ul class="nav-links">
+                <li><a href="/ea1/EA1.html">EA1 - Bilderkennung</a></li>
+                <li><a href="/ea2/EA2.html">EA2 - Regression</a></li>
+                <li><a href="/ea3/EA3.html">EA3</a></li>
+                <!-- <li><a href="/ea1-doku.html">Dokumentation</a></li> -->
+            </ul>
+        </nav>
+
+    </header>
+    <div class="title">
+        <h2>Bilderkennung mit ml5</h2>
+        <button type="button" class="btn-doku"><a href="/ea1/Dokumentation.html">Dokumentation</button></a>
+    </div>
+
+    <!-- Abschnitt --- Testbilder -->
+    <section class="sec-testbilder">
+        <h4><b> Testbilder</b>
+            <div class="tooltip"> <i class="material-icons">info</i>
+                <span class="tooltiptext">Klicken Sie auf eines der Bilder um sie zu Klassifizieren</span>
+            </div>
+        </h4>
+        <!-- Testbilder -->
+        <div class="testbilder">
+            <img class="bild-richtig" src="/ea1/images/banane.png" onclick="testBanana()" />
+            <img class="bild-richtig" src="/ea1/images/stift.png" onclick="testStift()" />
+            <img class="bild-richtig" src="/ea1/images/hund2.png" onclick="testHund2()" />
+            <img class="bild-falsch" src="/ea1/images/erdbeere.png" onclick="testErdbeere()" />
+            <img class="bild-falsch" src="/ea1/images/motorrad.png" onclick="testMotorrad()" />
+            <img class="bild-falsch" src="/ea1/images/wassermelone.png" onclick="testWassermelone()" />
+
+        </div>
+    </section>
+    <!-- Bilderkennung --- Abschnitt -->
+    <section class="sec-auswertung">
+        <div class="panel-links 1/3">
+            <h4><b>Bilderkennung</b>
+                <!-- Fragezeichen -  Icon -->
+                <div class="tooltip"> <i class="material-icons">info</i>
+                    <span class="tooltiptext">Fügen Sie hier ein Bild per Drag and Drop oder per Upload ein.</span>
+                </div>
+            </h4>
+            <!-- Bild einfügen -->
+            <div class="droparea">
+                <img id="droparea_img" src="/ea1/images/Bildleer.png" alt="Bild" class="droparea_img" draggable="false" />
+                <span class="drop-zone_prompt"><p><b>Drag & Drop</b> oder <b>Upload</b></p></span>
+                <!-- <input id="fileUploader" type="file" name="imgFile" accept="image/*"class="droparea_input" onchange="handleFiles()" /> -->
+                <div>
+                    <button type="button" class="btn-input">
+                        <div><i id="upload-icon" class="material-icons">upload</i>Foto hochladen</div></i>
+                    <input id="fileUploader" type="file" name="imgFile" accept="image/*"class="droparea_input" onchange="handleFiles()">  
+                    </button>
+                </div>
+
+
+            </div>
+        </div>
+        <!-- Auswertung der Confidence -->
+        <div class="panel-rechts 2/3">
+            <h4><b>Confidence</b>
+                <div class="tooltip"> <i class="material-icons">info</i>
+                    <span class="tooltiptext">Hier werden die Ergebnisse der 3 wahrscheinlichsten Klassifikationen angezeigt.</span>
+                </div>
+            </h4>
+
+            <!-- Balken in Prozent -->
+
+            <p id="ergebnistext0"><b>Best Guess:</b></p>
+            <div class="lila-balken">
+                <div id="ergebnis0" class="prozentbalken" style="width:0%">0%</div>
+            </div>
+
+            <p id="ergebnistext1"><b>Ergebnis 2</b></p>
+            <div class="lila-balken">
+                <div id="ergebnis1" class="prozentbalken" style="width:0%">0%</div>
+            </div>
+
+            <p id="ergebnistext2"><b>Ergebnis 3</b></p>
+            <div class="lila-balken">
+                <div id="ergebnis2" class="prozentbalken" style="width:0%">0%</div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>Deep Learning <br>Rinor Balaj</p>
+    </footer>
+</body>
+
+</html>
