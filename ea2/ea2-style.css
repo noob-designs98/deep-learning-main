@@ -1,0 +1,8 @@
+.create-Model {
+    justify-content: flex;
+    background-color: #742424;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #382121;
+    margin: 50px;
+}

@@ -47,6 +47,13 @@ h4 {
   margin: 0 auto 20 0;
 }
 
+h5 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #f4c255;
+  margin: 0 auto 20 0;
+}
+
 li,
 a {
   text-decoration: none;
@@ -92,6 +99,14 @@ header {
   color: #5565f4 !important;
 }
 
+.create-Model {
+  justify-content: flex;
+  background-color: #5565f4;
+  border-radius: 5px;
+  margin: 50px;
+  padding: 30px;
+}
+
 .btn-doku {
   position: relative;
   padding: 10px;
@@ -108,6 +123,122 @@ header {
 
 .btn-doku:hover {
   background-color: #000000;
+  cursor: pointer;
+}
+
+.btn-ea {
+  position: relative;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  border-radius: 2px;
+  color: #fff;
+  border: 0;
+  background-color: #5565f4;
+  overflow: hidden;
+  transition: 0.2s;
+}
+
+.btn-ea:hover {
+  background-color: #000000;
+  cursor: pointer;
+}
+
+.btn-model {
+  position: relative;
+  width: 150px;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+  border-radius: 2px;
+  color: #3b3b3b;
+  border: 0;
+  background-color: #f4c255;
+  overflow: hidden;
+  transition: 0.2s;
+}
+
+.btn-model:hover {
+  background-color: #3b3b3b;
+  color: #f4c255;
+  font-weight: 550;
+  cursor: pointer;
+}
+
+.button-group {
+  display: flex;
+  width: 200px;
+}
+
+.btn-sp,
+.btn-np,
+.btn-op {
+  background-color: #000000;
+  border: none;
+  padding: 10px;
+  color: rgb(255, 252, 252);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 0;
+  cursor: pointer;
+}
+
+.btn-sp:focus,
+.btn-np:focus,
+.btn-op:focus {
+  background-color: #f4c255;
+  color: #000000;
+}
+
+.btn-sp:hover,
+.btn-np:hover,
+.btn-op:hover {
+  background-color: #f4c255;
+  color: #000000;
+  /* Replace with your desired color */
+}
+
+.slider {
+  background-color: #f4c255;
+  -webkit-appearance: none;
+  height: 3px;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #000000;
+  cursor: pointer;
+}
+
+#learn-rate-value {
+  color: #000000;
+  position: relative;
+  top: 4px;
+  right: -10px;
+  padding: 5px;
+  width: 50px;
+  box-sizing: border-box;
+  background: #f4c255;
+  text-align: center;
+}
+
+#learn-rate-value::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  left: -5px;
+  width: 10px;
+  height: 10px;
+  background: #f4c255;
 }
 
 .logo {

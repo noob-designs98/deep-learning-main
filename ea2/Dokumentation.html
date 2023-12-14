@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Deep-Learning</title>
+    <title>Bilderkennung Dokumentation</title>
     <link rel="stylesheet" href="/style.css">
-    <link rel="icon" href="favicon-logo.png" type="image/png" sizes="16x16">
+    <link rel="icon" href="/favicon-logo.png" type="image/png" sizes="16x16">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
     <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
@@ -20,44 +20,44 @@
 <body>
 
     <header>
-        <img class="logo" src="favicon-logo.png" alt="logo">
+        <a href="/index.html"><img class="logo" src="/favicon-logo.png" alt="logo"></a>
         <nav>
             <ul class="nav-links">
                 <li><a href="/ea1/EA1.html">EA1 - Bilderkennung</a></li>
                 <li><a href="/ea2/EA2.html">EA2 - Regression</a></li>
-                <li><a href="/ea3/EA3.html">EA3</a></li>
+                <li><a href="/ea3/EA3.html">EA3 - Language Model</a></li>
                 <!-- <li><a href="/ea1-doku.html">Dokumentation</a></li> -->
             </ul>
         </nav>
 
     </header>
+    <div class="title">
+        <h2>Dokumentation: Regression mit FFNN</h2>
+        <a href="/ea2/EA2.html"><button type="button" class="btn-doku">Zurück zur Regression</button></a>
+    </div>
 
+    <body>
+        <div class="paragraf">
 
-    <!-- Auswahl Einsendeaufgaben -->
+            <div class="paragraf-section">
+                <h4>Was ist ml5.js?</h4>
 
-    <section>
-        <div class="Auswahl">
-            <h4><b> Einsendeaufgaben</b>
-                <div class="tooltip"> <i class="material-icons">info</i>
-                    <span class="tooltiptext">Wählen Sie aus den drei Einsendeaufgaben aus</span>
-                </div>
-            </h4>
-            <div class="Auswahl-Buttons">
-                <button type="button" class="btn-ea"><a href="/ea1/EA1.html">EA1 - Bilderkennung</button></a>
-                <button type="button" class="btn-ea"><a href="/ea2/EA2.html">EA2 - Regression</button></a>
-                <button type="button" class="btn-ea"><a href="/ea3/EA3.html">EA3</button></a>
+                <p>ml5.js ist eine JavaScript-Bibliothek für maschinelles Lernen, die es Entwicklern ermöglicht, leicht auf vortrainierte Modelle zuzugreifen und diese in Webanwendungen zu integrieren.<br> Sie bietet eine benutzerfreundliche Schnittstelle
+                    für Machine Learning-Aufgaben wie Bildklassifizierung, Objekterkennung und Spracherkennung, und ermöglicht so die Erstellung interaktiver und intelligenter Webanwendungen.</p>
+
             </div>
-        </div>
+            <div class="paragraf-section">
+                <h4>Interaktion</h4>
 
+                <p>Zur Klassifizierung eines Bildes hat der Nutzer drei unterschiedlichen Möglichkeiten zur Verfügung:</p>
+                <ol>
+                    <li>Eines der oberen sechs Bilder anklicken</li>
+                    <li>Per Drag and Drop ein eigenes Bild hochladen</li>
+                    <li>Per Upload-Funktion ein eigenes Bild hochladen</li>
+                </ol>
 
-    </section>
-
-    <footer>
-        <p>Deep Learning <br>Rinor Balaj</p>
-    </footer>
-</body>
-
-</html>             <br>Zur Besseren Übersicht wurde auf eine Nachkommastelle gerundet. Zur besseren Übersicht werden die Prozente auf eine Nachkommastelle gerundet. <br> Der Nutzer erhält durch eine Visualisierung der Bilder durch einen Rahmen einen
+                <P>Für die Klassifizierung muss der Nutzer keine weiteren Schritte vollziehen und das Bild wird automatisch klassifiziert. Das Ergebnis wird in Form von horizontalen Balken und einer Animation angezeigt.
+                    <br>Zur Besseren Übersicht wurde auf eine Nachkommastelle gerundet. Zur besseren Übersicht werden die Prozente auf eine Nachkommastelle gerundet. <br> Der Nutzer erhält durch eine Visualisierung der Bilder durch einen Rahmen einen
                     Überblick, welche der Bilder richtig und welche falsch klassifiziert wurden.</P>
 
 
