@@ -51,7 +51,7 @@ h5 {
   font-size: 1.2rem;
   font-weight: 700;
   color: #f4c255;
-  margin: 0 auto 20 0;
+  margin: 0 auto 10 0;
 }
 
 li,
@@ -99,12 +99,58 @@ header {
   color: #5565f4 !important;
 }
 
-.create-Model {
-  justify-content: flex;
+.pretrained-models {
+  display: flex;
   background-color: #5565f4;
   border-radius: 5px;
   margin: 50px;
   padding: 30px;
+}
+
+.create-Model {
+  display: flex;
+  /* Ordnet die Kinder nebeneinander an */
+  justify-content: space-between;
+  /* Fügt gleichmäßigen Platz zwischen den Kindern hinzu */
+  background-color: #5565f4;
+  border-radius: 5px;
+  margin: 0 50px;
+  padding: 30px;
+}
+
+.h4-model {
+  margin: 0 0 0 50;
+}
+
+.infos {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 20px 0px;
+  color: #f4c255;
+  font-weight: 600;
+}
+
+.col-rechts,
+.col-links {
+  flex: 1;
+  /* Beide nehmen die Hälfte des Platzes ein */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-top: 1rem;
+  margin: 0 20px;
+}
+
+.col-rechts input,
+.col-rechts select {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 2px;
+  /* Eingabefelder nehmen die volle Breite ein */
 }
 
 .btn-doku {
@@ -145,7 +191,7 @@ header {
   cursor: pointer;
 }
 
-.btn-model {
+#btn-model {
   position: relative;
   width: 150px;
   padding: 10px;
@@ -161,46 +207,34 @@ header {
   transition: 0.2s;
 }
 
-.btn-model:hover {
+#btn-model:hover {
   background-color: #3b3b3b;
   color: #f4c255;
   font-weight: 550;
   cursor: pointer;
 }
 
-.button-group {
-  display: flex;
-  width: 200px;
-}
-
-.btn-sp,
-.btn-np,
-.btn-op {
-  background-color: #000000;
-  border: none;
+#btn-example {
+  position: relative;
+  width: auto;
   padding: 10px;
-  color: rgb(255, 252, 252);
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 0;
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 2px;
+  color: #3b3b3b;
+  border: 0;
+  background-color: #f4c255;
+  overflow: hidden;
+  transition: 0.2s;
+}
+
+#btn-example:hover {
+  background-color: #3b3b3b;
+  color: #f4c255;
+  font-weight: 550;
   cursor: pointer;
-}
-
-.btn-sp:focus,
-.btn-np:focus,
-.btn-op:focus {
-  background-color: #f4c255;
-  color: #000000;
-}
-
-.btn-sp:hover,
-.btn-np:hover,
-.btn-op:hover {
-  background-color: #f4c255;
-  color: #000000;
-  /* Replace with your desired color */
 }
 
 .slider {
