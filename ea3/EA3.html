@@ -1,31 +1,18 @@
-<html>
+<!doctype html>
+<html lang="en-US">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Deep-Learning</title>
-    <link rel="stylesheet" href="/style.css">
-    <link rel="icon" href="/favicon-logo.png" type="image/png" sizes="16x16">
-
-    <script src="https://cdn.plot.ly/plotly-2.27.1.min.js" charset="utf-8"></script>
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"> -->
-
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.1/dist/tf.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.min.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis@1.0.2/dist/tfjs-vis.umd.min.js"></script>
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> -->
-    <script src="/ea3/lstm_dict.js"></script>
-    <script src="/ea3/feed_forward_dict.js"></script>
-    <script src="/ea3/main.js"></script>
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Deep Learning</title>
+    <link href="/style.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Zilla+Slab:400,700|Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 
-
-
-<body onload="init_models()">
-
+<body>
     <header>
         <a href="/index.html"><img class="logo" src="/favicon-logo.png" alt="logo"></a>
         <nav>
@@ -38,29 +25,75 @@
         </nav>
 
     </header>
-
     <div class="title">
-        <h2>Language Model mit RNN</h2>
+        <h2>Language Model</h2>
         <a href="/ea3/Dokumentation.html"><button type="button" class="btn-doku">Dokumentation</button></a>
     </div>
+    <main>
+        <section>
+            <div class="textarea">
+                <textarea id="chat-input" placeholder="Type your message here..."></textarea>
+                <span></span>
+                <button id="send-button" class="reset-btn" onclick="resetText()">Reset</button>
+            </div>
+            <div class="predictions">
+                <div class="rnn-prediction">
+                    <h2 style="margin-top: 150px;">RNN Vorhersage</p>
+                        <div style="height: calc(100vh);">
+                            <!--style="height: calc(100vh); width: 500px;">-->
+                            <div id="RNN-predictions">
+                                <!-- this is where the plotly graph will appear by code -->
+                            </div>
+                            <div id="RNN-char-predictions">
+                                <!-- this is where the plotly graph will appear by code - future project-->
+                            </div>
+                            <div id="RNN-placement-evaluation">
+                                <!-- will appear by code-->
+                            </div>
+                        </div>
 
-    <select id="inputNetwork">
-        <option value="rnn">RNN</option>
-        <option value="ffnn">FFNN</option>
-    </select>
+                </div>
 
-    <section class="textarea">
-        <textarea id="textfield" placeholder="Text eingeben..."></textarea>
-        <div id="result"></div>
-        <span></span>
+                <div class="ffnn-prediction">
+                    <h2 style="margin-top: 150px;">FFNN Vorhersage</p>
+                        <div style="height: calc(100vh);">
+                            <div id="FFNN-predictions">
+                                <!-- this is where the plotly graph will appear by code -->
+                            </div>
+                            <div id="FFNN-char-predictions">
+                                <!-- this is where the plotly graph will appear by code - future project-->
+                            </div>
+                            <div id="FFNN-placement-evaluation">
+                                <!-- will appear by code-->
+                            </div>
+                        </div>
 
-        <button id="reset-btn" onclick="resetText()">Reset</button>
 
-    </section>
+                </div>
+
+            </div>
+        </section>
 
 
+        <!--dev tools data-->
+        <div id="white-area" style="display:none;">
+            <div id="horizontal-alignment">
+                <h2>Dev Tools</h2>
+                <button id="save-data-btn" class="button-green">Save Data</button>
+                <button id="load-model-btn" class="button-green">Load Data</button>
+                <button id="train-RNNmodel-btn" class="button-green">Train RNN model</button>
+                <button id="train-FFNNmodel-btn" class="button-green">Train FFNN model</button>
 
 
+            </div>
+        </div>
+
+
+    </main>
+    <script src="/ea3/textData.js" charset="UTF-8"></script>
+
+    <script src="/ea3/dictionary.js" charset="UTF-8"></script>
+    <script src="/ea3/main.js" charset="UTF-8"></script>
 
     <footer>
         <p>Deep Learning <br>Rinor Balaj</p>
