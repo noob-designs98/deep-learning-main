@@ -10,18 +10,21 @@
     <script src="https://cdn.plot.ly/plotly-2.27.1.min.js" charset="utf-8"></script>
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"> -->
 
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.1/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis@1.0.2/dist/tfjs-vis.umd.min.js"></script>
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> -->
+    <script src="/ea3/lstm_dict.js"></script>
+    <script src="/ea3/feed_forward_dict.js"></script>
+    <script src="/ea3/main.js"></script>
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 
 
-<body>
+<body onload="init_models()">
 
     <header>
         <a href="/index.html"><img class="logo" src="/favicon-logo.png" alt="logo"></a>
@@ -35,12 +38,25 @@
         </nav>
 
     </header>
+
     <div class="title">
         <h2>Language Model mit RNN</h2>
         <a href="/ea3/Dokumentation.html"><button type="button" class="btn-doku">Dokumentation</button></a>
     </div>
 
+    <select id="inputNetwork">
+        <option value="rnn">RNN</option>
+        <option value="ffnn">FFNN</option>
+    </select>
 
+    <section class="textarea">
+        <textarea id="textfield" placeholder="Text eingeben..."></textarea>
+        <div id="result"></div>
+        <span></span>
+
+        <button id="reset-btn" onclick="resetText()">Reset</button>
+
+    </section>
 
 
 

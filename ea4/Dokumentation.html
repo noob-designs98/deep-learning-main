@@ -1,0 +1,108 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bilderkennung Dokumentation</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" href="/favicon-logo.png" type="image/png" sizes="16x16">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+    <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> -->
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+
+
+<body>
+
+    <header>
+        <img class="logo" src="/favicon-logo.png" alt="logo">
+        <nav>
+            <ul class="nav-links">
+                <li><a href="/ea1/EA1.html">EA1 - Bilderkennung</a></li>
+                <li><a href="/ea2/EA2.html">EA2 - Regression</a></li>
+                <li><a href="/ea4/index.html">EA3 - Language Model</a></li>
+                <!-- <li><a href="/ea1-doku.html">Dokumentation</a></li> -->
+            </ul>
+        </nav>
+
+    </header>
+    <div class="title">
+        <h2>Dokumentation: Language Model</h2>
+        <a href="/ea4/index.html"><button type="button" class="btn-doku">Zurück zum Language Model</button></a>
+    </div>
+
+    <body>
+        <div class="paragraf">
+
+            <div class="paragraf-section">
+                <h4>Was ist ein Language Modell?</h4>
+                <p>Ein "Word Prediction Language Model" (Wortvorhersage-Sprachmodell) ist ein spezieller Typ von Sprachmodell, das darauf trainiert ist, vorherzusagen, welches Wort oder welche Wörter in einem gegebenen Kontext am wahrscheinlichsten folgen.
+                    Dieser Ansatz wird oft in Textvorhersage- und automatischer Vervollständigungsfunktionalität verwendet. Das Ziel dieses Modells besteht darin, die Wahrscheinlichkeit jedes möglichen nächsten Wortes basierend auf den vorherigen Wörtern
+                    in einem Satz oder Text zu schätzen</p>
+
+
+                <p><b>RNN VS FFNN</b></p>
+                <p>Das RNN liefert deutlich bessere Vorehersagen als das FFNN, die sich auch viel sinnvoller in den Kontext der Eingabe einfügen</p>
+
+
+
+                <p><b>Datenschutzbedenken</b></p>
+                <p>Insbesondere mit einem sehr kleinen Trainingsset overfitten die Modelle stark und geben auf Eingaben aus dem Trainingsset, das Trainingsset 1:1 wieder. Daraus kann sich natürlich ein Datenschutzproblem ergeben, da unter Umständen private
+                    Konversationen aus den Trainingsdaten wiedergegeben werden können. In diesem Fall war es kein Problem da es sich um ein Buch handelte, jedoch wären diesen Bedenken aus einem E-Mail Trainingssatz deutlich höher Mit einem größeren Trainingsset
+                    schwächt sich dieser Effekt allerdings deutlich ab.</p>
+
+
+            </div>
+
+            <div class="paragraf-section">
+                <h4>Text</h4>
+
+                <p>Der Text wurde aus www.gutenberg.org bezogen. Dieser wurde zum einen manuell bereinigt, indem unwichtige Abschnitte entfernt wurden, die ebenso beim Model Schwierigkeiten bereitn könnten. Sämtliche Sonderzeichen wurden zudem entfernt und
+                    Umlaute wurden entsprechend umgewandelt, sodass sie verwendet werden konnten. Die Wörter wurden in jeweils einer Zahl beginnend von 1 zugeordnet und in eine JSON-Datei ausgegeben. Diese wurde in eine JS-Datei umgewewandelt, sodass
+                    sie besser verwendet werden konnte.
+                </p>
+
+            </div>
+            <div class="paragraf-section">
+                <h4>Interaktion</h4>
+
+                <p>Der Nutzer kann im oberen Textfeld seinen Text eingeben, woraufhin in dem Diagramm eine Vorhersage vorgenommen wird. Durch das Klicken auf den Reset Knopf wird das Textfeld zurückgesetzt und es kann erneut ein Text verfasst werden. Die
+                    Enter-Taste wurde in diesem Fall bewusst eingeschrängt, da es sonst Probleme bei der Vorhersage gäbe.</p>
+
+                <p><b>Navigation</b></p>
+                <p>Die Navigation erfolgt über den Header. Dort kann zwischen den verschiedenen Einsendeaufgaben (EAs) ausgewählt werden. Durch das Klicken auf den Dokumenations-Button gelangt man zu Dokumentation. Der Button ist nur in der respektiven EA
+                    zu finden.
+                    <br>Genauso ist des möglich über einen weiteren Zurück-Button wieder zum Model zurückzukehren.</p>
+
+
+
+            </div>
+
+            <div class="paragraf-section">
+                <h4>Technisch</h4>
+                <p> <b>Frameworks</b></p>
+                <p>Für die Implementierung wurde tensorflow als Framework verwendet. Für das Frontend wurde plain HTML, CSS & JS genutzt.</p>
+                <p>Für die Darstellung der Ergebnisse wurde plotly genutzt</p>
+                <p>Als Entwicklungsumgebung wird <a href=h ttps://code.visualstudio.com>Visual Studio Code</a> verwendet und zum hosten der Webseite wird Github Pages genutzt.</p>
+
+
+
+            </div>
+
+
+
+
+
+        </div>
+
+        <footer>
+            <p>Deep Learning <br>Rinor Balaj</p>
+        </footer>
+    </body>
+
+</html>
